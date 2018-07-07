@@ -3,8 +3,10 @@
   <h1>
     Welcome to {{ title }}!
 
-    <br> Meu nome é: {{ userModel.name }}
-    <br> Minha idade é: {{ userModel.age }}
+    <div *ngIf="(userModel.name && userModel.name != '') && (userModel.age && userModel.age != 0)">
+      <br> Meu nome é: {{ userModel.name }}
+      <br> Minha idade é: {{ userModel.age }}
+    </div>
 
     <br> Animal:
     <input type="text" (keyup)="updateAnimal(animal.value)" #animal>
@@ -28,6 +30,10 @@
     <button (click)="adicionarEndereco()">
       Adicionar Endereço
     </button>
+    <br>
+    <button (click)="obterUsuario()">
+      Obter Usuário
+    </button>
 
     <div>
       Endereços:
@@ -38,7 +44,7 @@
           <td>Número</td>
           <td>Cidade</td>
         </tr>
-        <tr *ngFor="let address of userModel.address">
+        <tr *ngFor="let address of userModel.address; let i = index;">
           <td>{{address.street}}</td>
           <td>{{address.number}}</td>
           <td>{{address.state}}</td>
