@@ -9,11 +9,13 @@ export class UserModel {
     this.name = name;
     this.age = age;
     this.address = new Array<Address>();
-    this.address.push({
-      street: address.street,
-      number: address.number,
-      state: address.state
-    });
+    if (address != null) {
+      this.address.push({
+        street: address.street,
+        number: address.number,
+        state: address.state
+      });
+    }
     // this.address[0] = address;
   }
 }

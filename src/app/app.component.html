@@ -11,21 +11,21 @@
     <br> Nome do animal é: {{ animalName }}
     <br>
     <br> Nome:
-    <input type="text" #nome>
+    <input type="text" [(ngModel)]="userModel.name">
     <br> Idade:
-    <input type="text" #idade>
+    <input type="text" [(ngModel)]="userModel.age">
     <br> Rua:
-    <input type="text" #rua>
+    <input type="text" [(ngModel)]="address.street">
     <br> Número:
-    <input type="text" #numero>
+    <input type="text" [(ngModel)]="address.number">
     <br> Cidade:
-    <input type="text" #cidade>
+    <input type="text" [(ngModel)]="address.state">
     <br>
-    <button (click)="atualizar(nome.value, idade.value, rua.value, numero.value, cidade.value)">
+    <button (click)="atualizar()">
       Atualizar
     </button>
     <br>
-    <button (click)="adicionarEndereco(rua.value, numero.value, cidade.value)">
+    <button (click)="adicionarEndereco()">
       Adicionar Endereço
     </button>
 
@@ -55,6 +55,10 @@
   <button (click)="setRandomNumber()">
     Set Random Number
   </button>
+
+  <form action="">
+    <input type="text" id="username" name="username" [(ngModel)]="userModel.name"> User Name: {{userModel.name}}
+  </form>
 
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>

@@ -18,6 +18,7 @@ export class AppComponent {
   animalName;
 
   userModel: UserModel;
+  address = new Address("", 0, "");
 
   constructor() {
     this.userModel = new UserModel("", 0, new Address("", 0, ""));
@@ -37,29 +38,18 @@ export class AppComponent {
     this.animalName = animalName;
   }
 
-  atualizar(
-    nome: string,
-    idade: number,
-    rua: string,
-    numero: number,
-    cidade: string
-  ) {
+  atualizar() {
     /*this.nomeValue = nome;
     this.idadeValue = idade;
     this.ruaValue = rua;
     this.numeroValue = numero;
     this.cidadeValue = cidade;*/
-
-    let address: Address = new Address(rua, numero, cidade);
-
-    this.userModel = new UserModel(nome, idade, address);
+    // let address: Address = new Address(rua, numero, cidade);
+    // this.userModel = new UserModel(nome, idade, null);
   }
 
-  adicionarEndereco(rua: string, numero: number, cidade: string) {
-    this.userModel.address.push(new Address(rua, numero, cidade));
-  }
-
-  remover() {
-    this.userModel.address;
+  adicionarEndereco() {
+    this.userModel.address.push(this.address);
+    this.address = new Address("", 0, "");
   }
 }
