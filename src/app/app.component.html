@@ -2,19 +2,77 @@
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
+
+    <br> Meu nome é: {{ userModel.name }}
+    <br> Minha idade é: {{ userModel.age }}
+
+    <br> Animal:
+    <input type="text" (keyup)="updateAnimal(animal.value)" #animal>
+    <br> Nome do animal é: {{ animalName }}
+    <br>
+    <br> Nome:
+    <input type="text" #nome>
+    <br> Idade:
+    <input type="text" #idade>
+    <br> Rua:
+    <input type="text" #rua>
+    <br> Número:
+    <input type="text" #numero>
+    <br> Cidade:
+    <input type="text" #cidade>
+    <br>
+    <button (click)="atualizar(nome.value, idade.value, rua.value, numero.value, cidade.value)">
+      Atualizar
+    </button>
+    <br>
+    <button (click)="adicionarEndereco(rua.value, numero.value, cidade.value)">
+      Adicionar Endereço
+    </button>
+
+    <div>
+      Endereços:
+      <br>
+      <table>
+        <tr>
+          <td>Rua</td>
+          <td>Número</td>
+          <td>Cidade</td>
+        </tr>
+        <tr *ngFor="let address of userModel.address">
+          <td>{{address.street}}</td>
+          <td>{{address.number}}</td>
+          <td>{{address.state}}</td>
+        </tr>
+      </table>
+    </div>
+
   </h1>
+
+  <button (click)="showAlert()">
+    Click Me
+  </button>
+
+  <button (click)="setRandomNumber()">
+    Set Random Number
+  </button>
+
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+    <h2>
+      <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
+    </h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+    <h2>
+      <a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a>
+    </h2>
   </li>
   <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+    <h2>
+      <a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a>
+    </h2>
   </li>
 </ul>
-
